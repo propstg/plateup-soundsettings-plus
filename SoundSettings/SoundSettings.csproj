@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Yariazen.PlateUp.ModBuildUtilities" Version="1.5.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>E:\Steam\steamapps\common\PlateUp\PlateUp\Mods\KitchenUnityExplorer\content\0Harmony.dll</HintPath>
+      <HintPath>..\..\OvercookedDash\Libraries\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Kitchen.Common">
       <HintPath>E:\Steam\steamapps\common\PlateUp\PlateUp\PlateUp_Data\Managed\Kitchen.Common.dll</HintPath>

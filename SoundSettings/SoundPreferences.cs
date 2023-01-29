@@ -7,12 +7,16 @@ namespace SoundSettings {
         public static readonly Pref MicrowaveVolume = new Pref(Mod.MOD_ID, nameof(MicrowaveVolume));
         public static readonly Pref MessVolume = new Pref(Mod.MOD_ID, nameof(MessVolume));
         public static readonly Pref DingVolume = new Pref(Mod.MOD_ID, nameof(DingVolume));
+        public static readonly Pref PickupDropVolume = new Pref(Mod.MOD_ID, nameof(PickupDropVolume));
+        public static readonly Pref FootstepsVolume = new Pref(Mod.MOD_ID, nameof(FootstepsVolume));
 
         public static void registerPreferences() {
-            Preferences.AddPreference<float>(new Kitchen.FloatPreference(DishWasherVolume, 0.25f));
-            Preferences.AddPreference<float>(new Kitchen.FloatPreference(MicrowaveVolume, 0.25f));
-            Preferences.AddPreference<float>(new Kitchen.FloatPreference(MessVolume, 1.0f));
-            Preferences.AddPreference<float>(new Kitchen.FloatPreference(DingVolume, 1.0f));
+            Preferences.AddPreference<float>(new FloatPreference(DishWasherVolume, 0.25f));
+            Preferences.AddPreference<float>(new FloatPreference(MicrowaveVolume, 0.25f));
+            Preferences.AddPreference<float>(new FloatPreference(MessVolume, 1.0f));
+            Preferences.AddPreference<float>(new FloatPreference(DingVolume, 1.0f));
+            Preferences.AddPreference<float>(new FloatPreference(PickupDropVolume, 1.0f));
+            Preferences.AddPreference<float>(new FloatPreference(FootstepsVolume, 1.0f));
             Preferences.Load();
         }
 

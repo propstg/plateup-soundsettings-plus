@@ -40,12 +40,16 @@ namespace SoundSettings {
                 return SoundPreferences.MessVolume;
             } else if ("process_complete_special".Equals(name)) {
                 return SoundPreferences.DingVolume;
+            } else if ("impactWood_light_004".Equals(name) || "impactWood_heavy_003".Equals(name)) {
+                return SoundPreferences.PickupDropVolume;
+            } else if ("Footsteps_mixdown2".Equals(name)) {
+                return SoundPreferences.FootstepsVolume;
             }
             return null;
         }
 
         private static bool shouldSetDirectly(Pref pref) {
-            return pref == SoundPreferences.MessVolume || pref == SoundPreferences.DingVolume;
+            return pref == SoundPreferences.MessVolume || pref == SoundPreferences.DingVolume || pref == SoundPreferences.PickupDropVolume || pref == SoundPreferences.FootstepsVolume;
         }
     }
 }

@@ -21,6 +21,7 @@ namespace SoundSettings {
             addFloat("Microwave", volumeValues, volumeLabels, SoundPreferences.MicrowaveVolume);
             addFloat("Mess", volumeValues, volumeLabels, SoundPreferences.MessVolume);
             addFloat("Ding", volumeValues, volumeLabels, SoundPreferences.DingVolume);
+            addFloat("Process Complete", volumeValues, volumeLabels, SoundPreferences.ProcessCompleteVolume);
             addFloat("Pickup/Drop", volumeValues, volumeLabels, SoundPreferences.PickupDropVolume);
             addFloat("Footsteps", extraVolumeValues, extendedVolumeLabels, SoundPreferences.FootstepsVolume);
             New<SpacerElement>();

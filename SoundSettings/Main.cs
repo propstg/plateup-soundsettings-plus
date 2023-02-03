@@ -10,7 +10,7 @@ namespace SoundSettings {
 
         public const string MOD_ID = "blargle.SoundSettingsPlus";
         public const string MOD_NAME = "SoundSettings+";
-        public const string MOD_VERSION = "0.0.3";
+        public const string MOD_VERSION = "0.0.4";
         public const string MOD_AUTHOR = "blargle";
 
         public Mod() : base(MOD_ID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, "1.1.3", Assembly.GetExecutingAssembly()) { }

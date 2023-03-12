@@ -1,6 +1,7 @@
 ﻿using Kitchen;
 
 namespace SoundSettings {
+
     public class SoundPreferences {
 
         public static readonly Pref DishWasherVolume = new Pref(Mod.MOD_ID, nameof(DishWasherVolume));

@@ -53,7 +53,7 @@ namespace SoundSettings {
         }
 
         private static object getPrefByName(string name) {
-            if (NAME_TO_PREFS.TryGetValue(name, out Pref value)) {
+            if (name != null && NAME_TO_PREFS.TryGetValue(name, out Pref value)) {
                 return value;
             }
 

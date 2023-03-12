@@ -6,13 +6,13 @@ using System.Linq;
 using UnityEngine;
 
 namespace SoundSettings {
+
     public class MainMenu<T> : KLMenu<T> {
 
         private static readonly List<float> volumeValues = new List<float> { 0f, 1f / 16f, 0.25f, 0.5f, 1.0f };
         private static readonly List<string> volumeLabels = Enumerable.Range(0, 5).Select(createNormalLabel).ToList();
         private static readonly List<float> extraVolumeValues = new List<float> { 0f, 1f / 16f, 0.25f, 0.5f, 1.0f, 1.5f, 2.0f };
         private static readonly List<string> extendedVolumeLabels = Enumerable.Range(0, 7).Select(createExtendedLabel).ToList();
-
 
         public MainMenu(Transform container, ModuleList module_list) : base(container, module_list) { }
 

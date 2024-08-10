@@ -1,34 +1,33 @@
-﻿using Kitchen;
+﻿using HarmonyLib;
+using Kitchen;
 using KitchenLib;
 using KitchenLib.Event;
+using KitchenMods;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace SoundSettings {
 
-    public class Mod : BaseMod {
+    public class Mod : IModInitializer {
 
         public const string MOD_ID = "blargle.SoundSettingsPlus";
         public const string MOD_NAME = "SoundSettings+";
-        public const string MOD_VERSION = "0.0.5";
-        public const string MOD_AUTHOR = "blargle";
+        public static readonly string MOD_VERSION = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.ToString();
 
-        public Mod() : base(MOD_ID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, ">=1.1.4", Assembly.GetExecutingAssembly()) { }
+        public void PostActivate(KitchenMods.Mod mod) {
+            Log($"v{MOD_VERSION} initialized");
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MOD_ID);
+        }
 
-        protected override void OnInitialise() {
+        public void PreInject() {
             SoundPreferences.registerPreferences();
-            initMenus();
         }
 
-        public static void Log(object message) {
-            Debug.Log($"[{MOD_ID}] {message}");
-        }
+        public void PostInject() {}
 
-        private void initMenus() {
-            ModsPreferencesMenu<PauseMenuAction>.RegisterMenu(MOD_NAME, typeof(MainMenu<PauseMenuAction>), typeof(PauseMenuAction));
-            Events.PreferenceMenu_PauseMenu_CreateSubmenusEvent += (s, args) => {
-                args.Menus.Add(typeof(MainMenu<PauseMenuAction>), new MainMenu<PauseMenuAction>(args.Container, args.Module_list));
-            };
+        public static void Log(object message, [CallerFilePath] string callingFilePath = "", [CallerLineNumber] int lineNumber = 0, [CallerMemberName] string caller = null) {
+            Debug.Log($"[{MOD_ID}] [{caller}({callingFilePath}:{lineNumber})] {message}");
         }
     }
 }

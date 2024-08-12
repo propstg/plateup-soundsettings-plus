@@ -1,11 +1,7 @@
 ﻿using HarmonyLib;
-using Kitchen;
-using KitchenLib;
-using KitchenLib.Event;
 using KitchenMods;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using UnityEngine;
 
 namespace SoundSettings {
 
@@ -14,6 +10,7 @@ namespace SoundSettings {
         public const string MOD_ID = "blargle.SoundSettingsPlus";
         public const string MOD_NAME = "SoundSettings+";
         public static readonly string MOD_VERSION = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.ToString();
+        public static bool registered = false;
 
         public void PostActivate(KitchenMods.Mod mod) {
             Log($"v{MOD_VERSION} initialized");
@@ -21,7 +18,10 @@ namespace SoundSettings {
         }
 
         public void PreInject() {
-            SoundPreferences.registerPreferences();
+            if (!registered) {
+                SoundPreferences.registerPreferences();
+                registered = true;
+            }
         }
 
         public void PostInject() {}

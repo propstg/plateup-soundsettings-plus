@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Kitchen;
 using KitchenMods;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -13,8 +14,10 @@ namespace SoundSettings {
         public static bool registered = false;
 
         public void PostActivate(KitchenMods.Mod mod) {
-            Log($"v{MOD_VERSION} initialized");
-            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MOD_ID);
+            if (!registered) {
+                Log($"v{MOD_VERSION} initialized");
+                Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MOD_ID);
+            }
         }
 
         public void PreInject() {

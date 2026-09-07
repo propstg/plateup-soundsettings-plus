@@ -42,12 +42,14 @@ namespace SoundSettings {
                 Debug.Log($"[{Mod.MOD_ID}] [NEW SOUND] [CLIP] '{___Clip.name}'");
             }
 
+            var effectVolume = SoundPreferences.getFloat(Pref.EffectVolume);
+
             if (___TargetVolume > 0 && (foundPref != null)) {
                 float selectedVolume = SoundPreferences.getFloat((Pref) foundPref);
                 if (shouldSetDirectly((Pref) foundPref)) {
-                    ___Audio.volume = selectedVolume * ___VolumeMultiplier;
+                    ___Audio.volume = selectedVolume * ___VolumeMultiplier * effectVolume;
                 } else {
-                    ___TargetVolume = selectedVolume * ___VolumeMultiplier;
+                    ___TargetVolume = selectedVolume * ___VolumeMultiplier * effectVolume;
                 }
             }
         }

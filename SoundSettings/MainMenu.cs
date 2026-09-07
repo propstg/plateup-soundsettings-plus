@@ -25,6 +25,7 @@ namespace SoundSettings {
             addFloat("Process Complete", volumeValues, volumeLabels, SoundPreferences.ProcessCompleteVolume);
             addFloat("Pickup/Drop", volumeValues, volumeLabels, SoundPreferences.PickupDropVolume);
             addFloat("Footsteps", extraVolumeValues, extendedVolumeLabels, SoundPreferences.FootstepsVolume);
+            addFloat("Door", volumeValues, volumeLabels, SoundPreferences.DoorVolume);
             New<SpacerElement>();
             New<SpacerElement>();
             AddButton(Localisation["MENU_BACK_SETTINGS"], delegate { RequestPreviousMenu(); });

@@ -11,6 +11,7 @@ namespace SoundSettings {
         public static readonly Pref PickupDropVolume = new Pref(Mod.MOD_ID, nameof(PickupDropVolume));
         public static readonly Pref FootstepsVolume = new Pref(Mod.MOD_ID, nameof(FootstepsVolume));
         public static readonly Pref ProcessCompleteVolume = new Pref(Mod.MOD_ID, nameof(ProcessCompleteVolume));
+        public static readonly Pref DoorVolume = new Pref(Mod.MOD_ID, nameof(DoorVolume));
 
         public static void registerPreferences() {
             Preferences.AddPreference<float>(new FloatPreference(DishWasherVolume, 0.25f));
@@ -20,6 +21,7 @@ namespace SoundSettings {
             Preferences.AddPreference<float>(new FloatPreference(PickupDropVolume, 1.0f));
             Preferences.AddPreference<float>(new FloatPreference(FootstepsVolume, 1.0f));
             Preferences.AddPreference<float>(new FloatPreference(ProcessCompleteVolume, 1.0f));
+            Preferences.AddPreference<float>(new FloatPreference(DoorVolume, 1.0f));
             Preferences.Load();
         }
 

@@ -5,7 +5,7 @@
 	<LangVersion>8</LangVersion>
 	<PathMap>$(MSBuildThisFileDirectory)=./</PathMap>
     <AssemblyName>SoundSettings+</AssemblyName>
-	<VersionPrefix>0.0.9</VersionPrefix>
+	<VersionPrefix>0.0.12</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
